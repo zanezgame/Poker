@@ -54,7 +54,7 @@ Jqa13
 
 *C/Poker_C.exe* (Windows 10 x64)
 
-## PHP 版本
+## PHP_POP 版本
 
 #### 用法
 
@@ -88,4 +88,33 @@ type | value | toSum | toLeft
 
 #### DEMO
 
-*PHP/Poker.htm*
+*PHP_POP/Poker.htm*  (CentOS 7.2 x64, Nginx, PHP5.6)
+
+## JavaScript_POP 版本
+
+#### 用法
+
+HTML head 需引用 *Poker.js*
+
+```
+<script type="text/javascript" src="Poker.js"></script>
+```
+
+HTML body 需设置以下两个标签和参数
+
+```
+<input type="text" id="in">
+<button onclick="run()">OK</button>
+```
+
+#### 参数要求
+
+输入仅识别数字和 *a* / *j* / *q* / *k* / *A* / *J* / *Q* / *K*，其余字符不作处理
+
+*1* 看做 *A*, *0* 看做 *10*
+
+超过5个参数以前5个做计算
+
+#### DEMO
+
+*JavaScript_POP/Poker.htm* (Chrome 57.0.2987.98 (64-bit), Windows 10 x64)

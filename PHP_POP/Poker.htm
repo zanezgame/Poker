@@ -15,7 +15,7 @@
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
             xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     show(xmlhttp.responseText);
 //                    {
 //                        //for debug:
@@ -23,17 +23,17 @@
 //                    }
                 }
             };
-            var toSend = document.getElementById('in').value.replace(/\#/g,'');
+            var toSend = document.getElementById('in').value.replace(/\#/g, '');
             xmlhttp.open("GET", "./Poker.php?" + encodeURI(toSend), true);
             xmlhttp.send();
         }
         function show(rawJson) {
             var json = JSON.parse(rawJson);
             var toWrite = document.getElementById('result');
-            if (json.errCode == 0) {
-                if (json.judgeText.type == 'BOMB') {
+            if (json.errCode === 0) {
+                if (json.judgeText.type === 'BOMB') {
                     toWrite.innerHTML = json.judgeText.type + ' : ' + json.judgeText.value;
-                } else if (json.judgeText.type == 'FIVE BULLS' || json.judgeText.type == 'FIVE SMALL BULLS' || json.judgeText.type == 'LOSE') {
+                } else if (json.judgeText.type === 'FIVE BULLS' || json.judgeText.type === 'FIVE SMALL BULLS' || json.judgeText.type === 'LOSE') {
                     toWrite.innerHTML = json.judgeText.type;
                 } else {
                     toWrite.innerHTML = json.judgeText.type + ' ' + json.judgeText.value + ':<br>';
