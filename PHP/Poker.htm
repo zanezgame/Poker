@@ -23,7 +23,7 @@
 //                    }
                 }
             };
-            var toSend = document.getElementById('in').value.replace(/\#/,'');
+            var toSend = document.getElementById('in').value.replace(/\#/g,'');
             xmlhttp.open("GET", "./Poker.php?" + encodeURI(toSend), true);
             xmlhttp.send();
         }
