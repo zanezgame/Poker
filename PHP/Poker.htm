@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Poker</title>
+    <script type="text/javascript">
+        function run() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                // IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                // IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    show(xmlhttp.responseText);
+//                    {
+//                        //for debug:
+//                        console.log(xmlhttp.responseText);
+//                    }
+                }
+            };
+            var toSend = document.getElementById('in').value.replace(/\#/,'');
+            xmlhttp.open("GET", "./Poker.php?" + encodeURI(toSend), true);
+            xmlhttp.send();
+        }
+        function show(rawJson) {
+            var json = JSON.parse(rawJson);
+            var toWrite = document.getElementById('result');
+            if (json.errCode == 0) {
+                if (json.judgeText.type == 'BOMB') {
+                    toWrite.innerHTML = json.judgeText.type + ' : ' + json.judgeText.value;
+                } else if (json.judgeText.type == 'FIVE BULLS' || json.judgeText.type == 'FIVE SMALL BULLS' || json.judgeText.type == 'LOSE') {
+                    toWrite.innerHTML = json.judgeText.type;
+                } else {
+                    toWrite.innerHTML = json.judgeText.type + ' ' + json.judgeText.value + ':<br>';
+                    toWrite.innerHTML += '[ ' + json.judgeText.toSum[0] + ' ' + json.judgeText.toSum[1] + ' ' + json.judgeText.toSum[2] + ' ] + ';
+                    toWrite.innerHTML += '( ' + json.judgeText.toLeft[0] + ' ' + json.judgeText.toLeft[1] + ' )<br>';
+                }
+            } else {
+                toWrite.innerHTML = json.errText;
+            }
+        }
+        function empty() {
+            document.getElementById('in').value = '';
+            document.getElementById('result').innerHTML = '';
+        }
+
+    </script>
+</head>
+<body>
+<h1>Welcome to the game:</h1>
+<p>what pokers ?</p>
+<p>("0" for 10, joker not allowed)</p>
+<input type="text" id="in">
+<button onclick="run()">OK</button>
+<button onclick="empty()">Redo</button>
+<h3>RESULT: </h3>
+<p id="result"></p>
+</body>
+</html>
