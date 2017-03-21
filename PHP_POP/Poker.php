@@ -65,11 +65,11 @@ function gameIn($in)
 
 function judge($pokersArr)
 {
-    judgeBigBouns($pokersArr);
-    judgeOtherBouns($pokersArr);
+    judgeBigBonus($pokersArr);
+    judgeOtherBonus($pokersArr);
 }
 
-function judgeBigBouns($pokersArr)
+function judgeBigBonus($pokersArr)
 {
     $err['errCode'] = 0;
     $err['errText'] = '';
@@ -100,7 +100,7 @@ function judgeBigBouns($pokersArr)
     }
 }
 
-function judgeOtherBouns($pokersArr)
+function judgeOtherBonus($pokersArr)
 {
     $sum = getPokersSum($pokersArr);
     $value = $sum % 10 == 0 ? 10 : $sum % 10;

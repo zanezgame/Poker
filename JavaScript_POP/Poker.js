@@ -36,7 +36,7 @@ function gameIn() {
 }
 function judge(pokersArr, sum) {
     if (judgeBigBonus(pokersArr, sum) === false) {
-        if (judgeOtherBouns(pokersArr, sum) === false) {
+        if (judgeOtherBonus(pokersArr, sum) === false) {
             var toWrite = document.getElementById('result');
             toWrite.innerHTML = 'LOSE';
         }
@@ -72,7 +72,7 @@ function judgeBigBonus(pokersArr, sum) {
     return false;
 }
 
-function judgeOtherBouns(pokersArr, sum) {
+function judgeOtherBonus(pokersArr, sum) {
     sum = getPokersSum(pokersArr);
     value = sum % 10 === 0 ? 10 : sum % 10;
     arr2Calc = [];
