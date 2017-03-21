@@ -18,7 +18,7 @@ Judge | Example
 没牛 | ( 3 5 7 A 9 )
 
 
-#### 参数要求
+## 所有语言参数要求
 
 输入仅识别数字和 *a* / *j* / *q* / *k* / *A* / *J* / *Q* / *K*，其余字符不作处理
 
@@ -26,16 +26,19 @@ Judge | Example
 
 超过5个参数以前5个做计算
 
+参数不足需重新输入5个参数
+
 ## C 版本
 
-#### 运行：
+#### 运行样例：
 
+程序开始：
 ```
 Welcome to the game:
 what pokers ?
 ("0" for 10, joker not allowed)
 ```
-输入5张牌，输出牌面的结果：
+输入5张牌，输出结果：
 ```
 2 3 4 5 6
 ========= BULL =========
@@ -57,7 +60,9 @@ Jqa13
 
 #### 用法
 
-GET *http(s)://your.domain.com/Poker.php?{参数}*
+GET *http(s)://your.domain.site/Poker.php?{参数}*
+
+返回 JSON
 
 #### JSON 返回值
 
@@ -85,17 +90,19 @@ type | value | toSum | toLeft
 
 #### 用法
 
-HTML head 需引用 *Poker.js*
-
+HTML head 需引用 *Poker.js* ：
 ```
 <script type="text/javascript" src="Poker.js"></script>
 ```
-
-HTML body 需设置以下两个标签和参数
-
+HTML body 需设置以下两个标签和参数：
 ```
 <input type="text" id="in">
 <button onclick="run()">OK</button>
+<p id="result"></p>
+```
+结果将会展示在：
+```
+<p id="result"></p>
 ```
 
 #### DEMO
@@ -107,8 +114,8 @@ HTML body 需设置以下两个标签和参数
 #### 用法
 
 ```
-new Poker().gameStart();
-
+Poker pokers = new Poker();
+pokers.gameStart();
 ```
 
 #### DEMO
