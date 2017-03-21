@@ -58,7 +58,7 @@ Jqa13
 
 *C/Poker_C.exe* (gcc 4.9.2, Windows 10 x64)
 
-## PHP_POP 版本
+## PHP 版本
 
 #### 用法
 
@@ -86,9 +86,9 @@ type | value | toSum | toLeft
 
 #### DEMO
 
-*PHP_POP/Poker.htm*  (CentOS 7.2 x64, Nginx 1.10.0, PHP 5.5.36)
+*PHP/Poker.htm*  (CentOS 7.2 x64, Nginx 1.10.0, PHP 5.5.36)
 
-## JavaScript_POP 版本
+## JavaScript 版本
 
 #### 用法
 
@@ -109,7 +109,7 @@ HTML body 需设置以下两个标签和参数：
 
 #### DEMO
 
-*JavaScript_POP/Poker.htm* (Chrome 57.0.2987.98 (64-bit), Windows 10 x64)
+*JavaScript/Poker.htm* (Chrome 57.0.2987.98 (64-bit), Windows 10 x64)
 
 ## Java 版本
 
@@ -134,4 +134,4 @@ python3 Poker.py
 ```
 
 #### DEMO
-*Python_POP/Poker.py* (Python 3.6, Windows 10 x64)
+*Python/Poker.py* (Python 3.6, Windows 10 x64)
