@@ -1,5 +1,7 @@
-# Poker
-### WIN EXAMPLE
+# Poker 斗牛 - 纸牌游戏
+
+### 获胜判定
+
 Judge | Example
 --- | ---
 炸弹 | [ K K K K ] + ( A )
@@ -18,7 +20,7 @@ Judge | Example
 没牛 | ( 3 5 7 A 9 )
 
 
-## 所有语言参数要求
+## 参数要求 （通用：适用于下述所有语言版本）
 
 输入仅识别数字和 *a* / *j* / *q* / *k* / *A* / *J* / *Q* / *K*，其余字符不作处理
 
@@ -54,7 +56,7 @@ Jqa13
 
 #### DEMO
 
-*C/Poker_C.exe* (Windows 10 x64)
+*C/Poker_C.exe* (gcc 4.9.2, Windows 10 x64)
 
 ## PHP_POP 版本
 
@@ -84,7 +86,7 @@ type | value | toSum | toLeft
 
 #### DEMO
 
-*PHP_POP/Poker.htm*  (CentOS 7.2 x64, Nginx, PHP5.6)
+*PHP_POP/Poker.htm*  (CentOS 7.2 x64, Nginx 1.10.0, PHP 5.5.36)
 
 ## JavaScript_POP 版本
 
@@ -121,3 +123,15 @@ pokers.gameStart();
 #### DEMO
 
 *Java/Demo.java* (JDK 1.8.0_121)
+
+## Python 版本
+
+#### 用法
+
+终端运行：
+```
+python3 Poker.py
+```
+
+#### DEMO
+*Python_POP/Poker.py* (Python 3.6, Windows 10 x64)

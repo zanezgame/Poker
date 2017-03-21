@@ -115,13 +115,7 @@ function judgeOtherBonus(pokersArr, sum) {
 function getPokersSum(pokersArr) {
     var sum = 0;
     for (var i = 0; i < 5; i++) {
-        if (pokersArr[i] === 0 || pokersArr[i] === 'J' || pokersArr[i] === 'Q' || pokersArr[i] === 'K') {
-            sum += 10;
-        } else if (pokersArr[i] === 'A') {
-            sum += 1;
-        } else {
-            sum += 1 * pokersArr[i];
-        }
+        sum += getPokerVal(pokersArr[i]) * 1;
     }
     return sum;
 }
