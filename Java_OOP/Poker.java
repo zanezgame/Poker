@@ -104,36 +104,28 @@ class Poker {
         value = sum % 10 == 0 ? 10 : sum % 10;
         if (judge10(0, 1, 2)) {
             showBull(0, 1, 2);
-            return true;
         } else if (judge10(0, 1, 3)) {
             showBull(0, 1, 3);
-            return true;
         } else if (judge10(0, 1, 4)) {
             showBull(0, 1, 4);
-            return true;
         } else if (judge10(0, 2, 3)) {
             showBull(0, 2, 3);
-            return true;
         } else if (judge10(0, 2, 4)) {
             showBull(0, 2, 4);
-            return true;
         } else if (judge10(0, 3, 4)) {
             showBull(0, 3, 4);
-            return true;
         } else if (judge10(1, 2, 3)) {
             showBull(1, 2, 3);
-            return true;
         } else if (judge10(1, 2, 4)) {
             showBull(1, 2, 4);
-            return true;
         } else if (judge10(1, 3, 4)) {
             showBull(1, 3, 4);
-            return true;
         } else if (judge10(2, 3, 4)) {
             showBull(2, 3, 4);
-            return true;
+        } else {
+        	return false;
         }
-        return false;
+        return true;
     }
 
     private int getPokerVal(String poker) {
